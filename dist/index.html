@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title data-head="true">Sound Tools: Tone Toggles Sequencer</title>
+    <meta name="description" content="Tone Web Experiment 01" data-head="true"/>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon.ico">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- HEADER BAR -->
+    <div id="top-bar">
+      <div id="top-container">
+        <!-- TITLE -->
+        <p>Tone Toggles Sequencer</p>
+
+        <!-- INFO BUTTON -->
+        <button id="about-modal-open" class="text-button">
+          Info
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTAINER FOR TONE TOGGLES -->
+    <div id="main-container">
+    </div>
+
+    <div id="control-bar">
+      <div id="controls-container">
+
+        <!-- PLAY/PAUSE -->
+        <div class="btn-element">
+          <button id="play-toggle" class="primary-button play-btn" type="button" name="mute" aria-label="Play">
+            <!-- "Mute" -->
+          </button>
+        </div>
+
+        <!-- SOUND SELECTOR -->
+        <div class="control-element">
+          <!-- CONTROL LABEL -->
+          <label class="t-ctr-bp1" for="tone-selection">Sound Bank</label>
+          <!-- TOGGLE GROUP -->
+          <div class="bp1-hidden toggle-group sound-selector">
+            <button id="tone-selection" name="sound-selector" value="tones" type="button" class="toggle selected">
+                Tones
+            </button>
+            <button id="beat-selection" name="sound-selector" value="beats" type="button" class="toggle">
+                Beats
+            </button>
+          </div>
+
+          <!-- MOBILE BUTTON -->
+          <button id="sound-selector-mini" type="button" class="bp1-visible" name="sound-selector" aria-label="Select Sound">
+            Tones
+          </button>
+        </div>
+
+        <!-- TEMPO CONTROL -->
+        <div class="control-element tempo-control">
+          <div class="slider-info-container">
+            <label for="tempo" class="control-label">Tempo</label>
+            <p id="tempo-readout" class="control-readout">120</p>
+          </div>
+          <input name="tempo" id="tempo" type="range" role="slider" min="40" max="220" value="120" step="1" aria-valuemin="40" aria-valuemax="220" aria-valuenow="120">
+        </div>
+
+        <!-- REFRESH NOTES -->
+        <div class="btn-element bp1-hidden">
+          <button id="refresh-btn" class="icon-button" type="button" name="refresh" aria-label="Refresh Notes">
+          </button>
+          <label for="refresh-btn" class="control-label">Refresh</label>
+        </div>
+
+        <!-- CLEAR -->
+        <div class="btn-element bp1-hidden">
+          <button id="clear-btn" class="icon-button" type="button" name="clear" aria-label="Clear Pattern">
+          </button>
+          <label for="refresh-btn" class="control-label">Clear</label>
+
+        </div>
+
+      <!-- END CONTROLS CONTAINER & CONTROL BAR -->
+      </div>
+    </div>
+
+    <!-- ABOUT MODAL  -->
+    <div id="about-modal" class="modal">
+      <button id="about-modal-close" class="icon-button" type="button" name="Close" aria-label="Close">
+        <!-- "Close" -->
+      </button>
+      <div class="about-content">
+        <!-- TITLE -->
+        <div class="content-section">
+          <h1>Tone Toggles Sequencer</h1>
+        </div>
+
+        <!-- HOW TO PLAY -->
+        <div class="content-section">
+          <h2>How To Play</h2>
+          <p class="content">For the most part, this works like any other sequencer. Click or tap on the gray boxes (aka "Tone Toggles") to create your pattern, and hit the Play button to hear the results.</p>
+
+          <p class="content">The special part here is the random function, which is activated by the star button beneath each set of Tone Toggles. When this is on, the computer will decide which (if any) notes to play, giving your sequence a bit of an unexpected flair.</p>
+
+          <p class="content">The set of tones is randomly selected from a root note's major and minor keys. If you don't like the selection, hit refresh to get new notes. Add some beats, set your tempo and enjoy your unique musical creation.</p>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="content-section">
+          <h2>About Tone Toggles Sequencer</h2>
+          <p class="content">Tone Toggles Sequencer is a musical sequencing tool that blends the creativity of the user and the unpredictability of computer-generated-randomness to produce unique musical creations with each use.</p>
+
+          <p class="content">This was created by <a href="https://chrisschnaars.com/">Chris Schnaars</a>. Please <a href="mailto:hello@chrisschnaars.com">get in touch</a> with any questions, problems, or feedback. You can find more generative sound tools <a href="https://schnaars.xyz/">here</a>.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Main Script  -->
+    <script src="js/main.js" charset="utf-8"></script>
+
+  </body>
+</html>
