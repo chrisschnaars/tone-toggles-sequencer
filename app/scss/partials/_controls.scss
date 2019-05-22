@@ -164,7 +164,6 @@ button > * {
   @include flex(1);
 }
 
-
 // ACTIVE CLASS FOR THE SELECTED BUTTON
 .toggle.selected {
 	background-color: $primary-color;

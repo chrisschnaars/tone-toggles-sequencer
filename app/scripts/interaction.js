@@ -80,6 +80,8 @@ function setupInteraction() {
   tempoControl.addEventListener("input", function() {
     bpm = Number(this.value);
     document.querySelector("#tempo-readout").innerHTML = this.value;
+    tempoControl.setAttribute('aria-valuenow', bpm);
+    tempoControl.setAttribute('value', bpm);
     calcDelay();
     // console.log(bpm);
   }, false);
