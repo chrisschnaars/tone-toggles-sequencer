@@ -20,7 +20,7 @@ $content-line-height-sm:    1.5rem !default;
 
 // NOTe Display
 $note-display-font-size:    2rem !default;
-$note-display-font-size-sm: 1.25rem !default;
+$note-display-font-size-sm: 1rem !default;
 $note-display-line-height:  1 !default;
 
 // CONTROL BUTTON LABELS
@@ -40,8 +40,10 @@ GRIDS AND SPACING
 $spacing-unit:            1rem;
 
 // ELEMENT SIZING
-$top-bar-height:          3.25rem;
-$control-bar-height:      6rem;
+$top-bar-height:          2.75rem;
+$top-bar-height-sm:       2.5rem;
+$control-bar-height:      5.5rem;
+$control-bar-height-sm:   5rem;
 
 // CONTENT
 $content-max-width:       38rem !default;
@@ -61,7 +63,7 @@ COLOR PALETTE
 // GRAYSCALE
 $white:  #FFFFFF;
 $gray-1: #f8f9fa;
-$gray-2: #ebedef;
+$gray-2: #EFF0F2;
 $gray-3: #dee1e3;
 $gray-4: #C2C8CB;
 $gray-5: #3e3e42;
@@ -70,7 +72,7 @@ $black:  #111112;
 // UI COLOR
 $primary-color:         #650cb9 !default; // PURPLE
 $primary-color-dark:    #490985 !default;
-$primary-color-light:   #8F27F1 !default;
+$primary-color-light:   #f0e7f8 !default;
 
 
 /**************************************

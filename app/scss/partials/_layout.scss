@@ -1,3 +1,9 @@
+.site-container {
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(space-between);
+}
+
 /**************************************
 GLOBAL PADDING FOR CORE LAYOUT
 **************************************/
@@ -59,16 +65,21 @@ TOP BAR AND CONTROLS
   @include align-items(center);
   // APPEARANCE
   border-bottom: 1px solid $gray-2;
+  @include bp1 {
+    height: $top-bar-height-sm;
+    border: none;
+  }
 }
 
 // CONTROL BAR
 #control-bar {
   // LAYOUT
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   height: $control-bar-height;
   // APPERANCE
   border-top: 1px solid $gray-3;
+  @include bp1 {
+    height: $control-bar-height-sm;
+  }
 }
 
 // MAX WIDTH FOR CONTROLS CONTAINER
@@ -77,8 +88,6 @@ TOP BAR AND CONTROLS
   margin: 0 auto;
   max-width: $controls-max-width;
   max-height: $controls-max-height;
-  // FLEX
-  // @include align-items(center);
 }
 
 /**************************************
@@ -92,7 +101,7 @@ INDIVIDUAL CONTROL ELEMENT CONTAINERS
   margin-left: 2.5rem;
   @include bp1 {
     width: auto;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
   &:first-child {
     margin-left: 0;

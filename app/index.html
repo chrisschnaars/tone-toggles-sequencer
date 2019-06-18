@@ -22,78 +22,79 @@
   </head>
 
   <body>
+    <div class="site-container">
 
-    <!-- HEADER BAR -->
-    <div id="top-bar">
-      <div id="top-container">
-        <!-- TITLE -->
-        <p>Tone Toggles Sequencer</p>
+      <!-- HEADER BAR -->
+      <div id="top-bar">
+        <div id="top-container">
+          <!-- TITLE -->
+          <p>Tone Toggles Sequencer</p>
 
-        <!-- INFO BUTTON -->
-        <button id="about-modal-open" class="text-button">
-          Info
-        </button>
+          <!-- INFO BUTTON -->
+          <button id="about-modal-open" class="text-button">
+            Info
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- CONTAINER FOR TONE TOGGLES -->
-    <div id="main-container">
-    </div>
+      <!-- CONTAINER FOR TONE TOGGLES -->
+      <div id="main-container"></div>
 
-    <div id="control-bar">
-      <div id="controls-container">
+      <div id="control-bar">
+        <div id="controls-container">
 
-        <!-- PLAY/PAUSE -->
-        <div class="btn-element">
-          <button id="play-toggle" class="primary-button play-btn" type="button" name="mute" aria-label="Play">
-            <!-- "Mute" -->
-          </button>
-        </div>
-
-        <!-- SOUND SELECTOR -->
-        <div class="control-element">
-          <!-- CONTROL LABEL -->
-          <label class="t-ctr-bp1" for="tone-selection">Sound Bank</label>
-          <!-- TOGGLE GROUP -->
-          <div class="bp1-hidden toggle-group sound-selector">
-            <button id="tone-selection" name="sound-selector" value="tones" type="button" class="toggle selected">
-                Tones
-            </button>
-            <button id="beat-selection" name="sound-selector" value="beats" type="button" class="toggle">
-                Beats
+          <!-- PLAY/PAUSE -->
+          <div class="btn-element">
+            <button id="play-toggle" class="primary-button play-btn" type="button" name="mute" aria-label="Play">
+              <!-- "Mute" -->
             </button>
           </div>
 
-          <!-- MOBILE BUTTON -->
-          <button id="sound-selector-mini" type="button" class="bp1-visible" name="sound-selector" aria-label="Select Sound">
-            Tones
-          </button>
-        </div>
+          <!-- SOUND SELECTOR -->
+          <div class="control-element">
+            <!-- CONTROL LABEL -->
+            <label class="t-ctr-bp1" for="tone-selection">Sound Bank</label>
+            <!-- TOGGLE GROUP -->
+            <div class="bp1-hidden toggle-group sound-selector">
+              <button id="tone-selection" name="sound-selector" value="tones" type="button" class="toggle selected">
+                  Tones
+              </button>
+              <button id="beat-selection" name="sound-selector" value="beats" type="button" class="toggle">
+                  Beats
+              </button>
+            </div>
 
-        <!-- TEMPO CONTROL -->
-        <div class="control-element tempo-control">
-          <div class="slider-info-container">
-            <label for="tempo" class="control-label">Tempo</label>
-            <p id="tempo-readout" class="control-readout">120</p>
+            <!-- MOBILE BUTTON -->
+            <button id="sound-selector-mini" type="button" class="bp1-visible" name="sound-selector" aria-label="Select Sound">
+              Tones
+            </button>
           </div>
-          <input name="tempo" id="tempo" type="range" role="slider" min="40" max="220" value="120" step="1" aria-valuemin="40" aria-valuemax="220" aria-valuenow="120">
-        </div>
 
-        <!-- REFRESH NOTES -->
-        <div class="btn-element bp1-hidden">
-          <button id="refresh-btn" class="icon-button" type="button" name="refresh" aria-label="Refresh Notes">
-          </button>
-          <label for="refresh-btn" class="control-label">Refresh</label>
-        </div>
+          <!-- TEMPO CONTROL -->
+          <div class="control-element tempo-control">
+            <div class="slider-info-container">
+              <label for="tempo" class="control-label">Tempo</label>
+              <p id="tempo-readout" class="control-readout">120</p>
+            </div>
+            <input name="tempo" id="tempo" type="range" role="slider" min="40" max="220" value="120" step="1" aria-valuemin="40" aria-valuemax="220" aria-valuenow="120">
+          </div>
 
-        <!-- CLEAR -->
-        <div class="btn-element bp1-hidden">
-          <button id="clear-btn" class="icon-button" type="button" name="clear" aria-label="Clear Pattern">
-          </button>
-          <label for="refresh-btn" class="control-label">Clear</label>
-        </div>
+          <!-- REFRESH NOTES -->
+          <div class="btn-element bp1-hidden">
+            <button id="refresh-btn" class="icon-button" type="button" name="refresh" aria-label="Refresh Notes">
+            </button>
+            <label for="refresh-btn" class="control-label">Refresh</label>
+          </div>
 
-      <!-- END CONTROLS CONTAINER & CONTROL BAR -->
+          <!-- CLEAR -->
+          <div class="btn-element bp1-hidden">
+            <button id="clear-btn" class="icon-button" type="button" name="clear" aria-label="Clear Pattern">
+            </button>
+            <label for="refresh-btn" class="control-label">Clear</label>
+          </div>
+
+        <!-- END CONTROLS CONTAINER & CONTROL BAR -->
+        </div>
       </div>
     </div>
 
