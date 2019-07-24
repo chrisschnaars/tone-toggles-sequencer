@@ -5,13 +5,12 @@ INTERACTIVITY
 // SETUP EVENT LISTENERS
 function setupInteraction() {
 
-  // TONE TOGGLE CLICK AND MOUSE EVENTS
-  for (var i = 0; i < toneToggleDivs.length; i++) {
-
-    // CLICK
+  // TONE TOGGLE CLICK EVENTS
+  for (let i=0; i < toneToggleDivs.length; i++) {
     toneToggleDivs[i].addEventListener("click", function(e) {
       // e.preventDefault();
-      var id = e.target.getAttribute("id");
+      let id = e.target.getAttribute("id");
+
       for (let i=0; i<numBeats; i++) {
         for (let j=0; j<numToggles; j++) {
           if (toneToggles[i][j].id == id) {
@@ -19,12 +18,10 @@ function setupInteraction() {
           }
         }
       }
-      // toneToggles[id].toggle();
     }, false);
   }
 
-  // KEYBOARD EVENTS
-  var keyCodes = ["a", "s", "d", "f", "j", "k", "l", ";"];
+  // TONE TOGGLE KEYBOARD EVENTS
   document.addEventListener('keydown', function(e) {
     // TABBING
     if (e.key === 'Tab') { // the "I am a keyboard user" key
@@ -38,25 +35,24 @@ function setupInteraction() {
   }, false);
 
   // RANDOM BUTTONS
-  let rb = document.querySelectorAll('.random-btn');
+  let rb = document.querySelectorAll('.js-random-btn');
   for (let i=0; i < rb.length; i++) {
     rb[i].addEventListener('click', function(e){
-      console.log(e);
       e.preventDefault();
       e.target.blur();
       randomizeToggle(e.target.id);
-      updateRandomButtonStatus(e.target.id);
+      toggleRandomButtonState(e.target.id);
     }, false);
   }
 
   // PLAY/PAUSE BUTTON
-  document.querySelector("#play-toggle").addEventListener('click', function(e){
+  document.querySelector(".js-play-toggle").addEventListener('click', function(e){
     updatePlaying();
     e.target.blur();
   }, false);
 
   // SOUND SELECTOR
-  document.querySelector('.sound-selector').addEventListener('click', function(e){
+  document.querySelector('.js-sound-bank-toggle').addEventListener('click', function(e){
     let s = e.target.value;
     if (s == "tones" && beatsMode || s == "beats" && !beatsMode) {
       updateToggleDisplays();
@@ -65,7 +61,7 @@ function setupInteraction() {
   }, false);
 
   // MOBILE SOUND SELECTOR
-  let ssm = document.querySelector("#sound-selector-mini");
+  let ssm = document.querySelector(".js-sound-bank-toggle-mini");
   ssm.addEventListener('click', function(e){
     updateToggleDisplays();
     if (!beatsMode) {
@@ -79,35 +75,33 @@ function setupInteraction() {
   // TEMPO SLIDER
   tempoControl.addEventListener("input", function() {
     bpm = Number(this.value);
-    document.querySelector("#tempo-readout").innerHTML = this.value;
+    document.querySelector(".js-tempo-readout").innerHTML = this.value;
     tempoControl.setAttribute('aria-valuenow', bpm);
     tempoControl.setAttribute('value', bpm);
     calcDelay();
-    // console.log(bpm);
   }, false);
 
   // REFRESH BUTTON
-  document.querySelector("#refresh-btn").addEventListener('click', function(e){
+  document.querySelector(".js-refresh-btn").addEventListener('click', function(e){
     setTones();
     updateToggleTones();
     e.target.blur();
   }, false);
 
   // CLEAR BUTTON
-  document.querySelector("#clear-btn").addEventListener('click', function(e){
+  document.querySelector(".js-clear-btn").addEventListener('click', function(e){
     clearTones();
     e.target.blur();
   }, false);
 
   // ABOUT BUTTON - SHOW ABOUT MODAL
-  document.querySelector("#about-modal-open").addEventListener("click", function() {
-    document.querySelector("#about-modal").classList.add("visible");
+  document.querySelector(".js-about-open-btn").addEventListener("click", function() {
+    document.querySelector(".about").classList.add("about--visible");
   }, false);
 
-  // CLOSE ABOUT TOGGLE
-  // ABOUT BUTTON - SHOW ABOUT MODAL
-  document.querySelector("#about-modal-close").addEventListener("click", function() {
-    document.querySelector("#about-modal").classList.remove("visible");
+  // CLOSE ABOUT TOGGLEL
+  document.querySelector(".js-about-close-btn").addEventListener("click", function() {
+    document.querySelector(".about").classList.remove("about--visible");
   }, false);
 }
 
@@ -118,29 +112,33 @@ TOGGLE GROUP UPDATES
 // UPDATE TOGGLE BUTTON GROUP FOR ACTIVE SELECTION
 function updateToggleStatus(e) {
   // REMOVE SELECTED CLASS FROM ALL TOGGLES
-  let toggleButtons = document.querySelectorAll('.toggle');
-  for (var i=0; i<toggleButtons.length; i++) {
-    toggleButtons[i].classList.remove('selected');
+  var toggles = document.querySelectorAll(".btn--toggle");
+  for (var i=0; i<toggles.length; i++) {
+    toggles[i].classList.remove("btn--toggle-selected");
   }
 
   // ADD SELECTED CLASS TO SELECTED
-  e.target.classList.add( "selected" );
+  e.target.classList.add("btn--toggle-selected");
 }
 
-function updateRandomButtonStatus(id) {
+
+// TOGGLE RANDOM BUTTON STATE
+function toggleRandomButtonState(id) {
+
   // GET ALL RANDOM BUTTONS
-  let randomButtons = document.querySelectorAll('.random-btn');
+  let randomButtons = document.querySelectorAll('.js-random-btn');
 
   // UPDATE CLICKED RANDOM BUTTON
   let r = randomButtons[id];
-  console.log(r, r.value);
   if (r.value == "off") {
-    r.classList.remove("random-btn-off");
-    r.classList.add("random-btn-on");
+    r.classList.remove("btn--random-off");
+    r.classList.add("btn--random-on");
+    r.classList.add("btn--toggle-selected");
     r.value = "on"
   } else {
-    r.classList.remove("random-btn-on");
-    r.classList.add("random-btn-off");
+    r.classList.remove("btn--random-on");
+    r.classList.remove("btn--toggle-selected");
+    r.classList.add("btn--random-off");
     r.value = "off";
   }
 

@@ -28,36 +28,40 @@ function createToggleObjects() {
   // SET INDEX FOR UNIQUE TOGGLE ID
   let index=0;
 
+  // CREATE TONE TOGGLES CONTAINER FOR BEAT
   for (let i=0; i<numBeats; i++) {
-    // CREATE TONE TOGGLES CONTAINER FOR BEAT
-    let ttc = document.createElement('div');
-    ttc.classList.add('tone-toggles-container');
 
-    // ADD TOGGLES CONTAINER TO PARENT DIV
-    let pD = document.querySelector('#main-container');
+    // CREATE BEAT CONTAINER
+    let ttc = document.createElement('div');
+    ttc.classList.add('beat-container');
+
+    // ADD BEAT CONTAINER TO PARENT
+    let pD = document.querySelector('.main-container');
     pD.append(ttc);
 
     // CREATE TEMPORARY HOLDING ARRAY FOR EACH BEAT'S TOGGLES
     let tmpArry = [];
 
+
     // CREATE TOGGLES
     for (let j=0; j<numToggles; j++) {
+
       // CREATE TONE TOGGLE OBJECT
       tmpArry[j] = new ToneToggle(index, i);
 
       // CREATE TONE TOGGLE DIV ELEMENT
       var t = document.createElement('div');
       t.id = index; // add id
-      t.classList.add('tone-toggle', 'beat-' + i); // add tone-toggle class
+      t.classList.add('tone-toggle', 'beat-' + i);
 
       // ADD NOTE DISPLAY ELEMENT
       let p1 = document.createElement('p');
-      p1.classList.add('note-display', 'note-' + j);
+      p1.classList.add('tone-toggle__note-display', 'note-' + j);
       t.append(p1);
 
       // ADD BEAT DISPLAY ELEMENT
       let p2 = document.createElement('p');
-      p2.classList.add('beat-display', 'beatTone-' + j, 'inactive-display');
+      p2.classList.add('tone-toggle__beat-display', 'beatTone-' + j, 'tone-toggle--inactive-display');
       t.append(p2);
 
       // APPEND TO TOGGLE CONTAINER
@@ -73,7 +77,7 @@ function createToggleObjects() {
 
   // SET TOGGLE DIVS VARIABLE
   toneToggleDivs = document.getElementsByClassName('tone-toggle');
-  toneToggleContainerDivs = document.getElementsByClassName('tone-toggles-container');
+  toneToggleContainerDivs = document.getElementsByClassName('beat-container');
 }
 
 // UPDATE TOGGLE DIVS FOR NEW KEYS
@@ -119,10 +123,10 @@ function createRandomButtons() {
     // CREATE RANDOM BUTTON
     let b = document.createElement('button');
     b.id = i;
-    b.classList.add('icon-button', 'random-btn', 'random-btn-off');
+    b.classList.add('btn', 'btn--icon', 'btn--random-off', 'js-random-btn');
     b.name = 'random';
     b.value = 'off';
-    b.setAttribute('aria-label', 'Randomly Select Beat');
+    b.setAttribute('aria-label', 'Toggle Randomness');
     // ADD TO PARENT CONTAINER DIV
     toneToggleContainerDivs[i].append(b);
   }
@@ -145,22 +149,22 @@ function clearTones() {
 // TOGGLE BETWEEN BEATS AND TONES MODE
 function updateToggleDisplays() {
   // DEFINE ALL P ELEMENTS
-  let nD = document.querySelectorAll('.note-display');
-  let bD = document.querySelectorAll('.beat-display');
+  let nD = document.querySelectorAll('.tone-toggle__note-display');
+  let bD = document.querySelectorAll('.tone-toggle__beat-display');
 
   if (!beatsMode) {
     // TOGGLE DISPLAY ELEMENTS
     for (let i=0; i<nD.length; i++) {
-      nD[i].classList.add('inactive-display');
-      bD[i].classList.remove('inactive-display');
+      nD[i].classList.add('tone-toggle--inactive-display');
+      bD[i].classList.remove('tone-toggle--inactive-display');
     }
     // TOGGLE FLAG
     beatsMode = true;
   } else {
     // TOGGLE DISPLAY ELEMENTS
     for (let i=0; i<nD.length; i++) {
-      bD[i].classList.add('inactive-display');
-      nD[i].classList.remove('inactive-display');
+      bD[i].classList.add('tone-toggle--inactive-display');
+      nD[i].classList.remove('tone-toggle--inactive-display');
     }
     // TOGGLE FLAG
     beatsMode = false;

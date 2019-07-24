@@ -11,7 +11,7 @@ let previousBeat = numBeats - 1;
 let playing = false;
 
 // TEMPO CONTROL
-const tempoControl = document.querySelector("#tempo");
+const tempoControl = document.querySelector(".js-tempo-control");
 let bpm = Number(tempoControl.value);
 let delay;  // TIMER FOR SET TIMEOUT
 

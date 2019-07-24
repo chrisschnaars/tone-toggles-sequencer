@@ -155,8 +155,8 @@ function playTones() {
     }
 
     // ACTIVATE CONTAINERS
-    toneToggleContainerDivs[previousBeat].classList.remove('active-beat-container');
-    toneToggleContainerDivs[activeBeat].classList.add('active-beat-container');
+    toneToggleContainerDivs[previousBeat].classList.remove('beat-container--active');
+    toneToggleContainerDivs[activeBeat].classList.add('beat-container--active');
 
     // RESET TIMER
     timer = setTimeout(myTimer, delay/numBeats);
@@ -187,24 +187,25 @@ function stopTones() {
 
 // TOGGLE PLAYING
 function updatePlaying() {
+
   // PLAY TOGGLE DOM ELEMENT
-  var playToggle = document.querySelector("#play-toggle");
+  let playToggle = document.querySelector(".js-play-toggle");
 
   // TOGGLE PLAYING
   if (playing) {
     // STOP OSCILLATORS
     stopTones();
     // Update Button State
-    playToggle.classList.remove("pause-btn");
-    playToggle.classList.add("play-btn");
+    playToggle.classList.remove("btn--pause");
+    playToggle.classList.add("btn--play");
     // Update boolean
     playing = false;
   } else {
     // START OSCILLATORS
     playTones();
     // Update Button State
-    playToggle.classList.remove("play-btn");
-    playToggle.classList.add("pause-btn");
+    playToggle.classList.remove("btn--play");
+    playToggle.classList.add("btn--pause");
     // Update boolean
     playing = true;
   }

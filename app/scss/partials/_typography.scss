@@ -1,25 +1,36 @@
-/*
- ALL INTERACTIVE CONTROLS
-*/
+/*------------------------------------*\
+  #HEADERS
+\*------------------------------------*/
 
 h1 {
-  font-size: $headline-font-size;
-  line-height: $headline-line-height;
+  font-size: $content-font-size;
+  font-weight: $font-weight-normal;
+  line-height: $content-line-height;
+
+  @include bp1 {
+    font-size: $content-font-size-sm;
+    line-height: $content-line-height-sm;
+  }
+}
+
+h2, h3 {
   font-weight: $font-weight-heavy;
-  margin-bottom: 2rem;
+  line-height: $headline-line-height;
 }
 
 h2 {
-  font-weight: 500;
-  font-weight: $font-weight-heavy;
-  line-height: $headline-line-height;
+  font-size: $headline-font-size;
+  margin-bottom: 2rem;
 }
 
-// CONTENT
 p {
   font-size: $content-font-size;
   line-height: $content-line-height;
-  // RESPONSIVE
+  margin-bottom: $content-line-height;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @include bp1 {
     font-size: $content-font-size-sm;
     line-height: $content-line-height-sm;
@@ -27,50 +38,28 @@ p {
 }
 
 // CONTROL LABELS
-label, p.control-label, p.control-readout {
+.control-bar__control-label, .control-bar__control-readout {
   font-size: $ui-label-font-size;
   line-height: $ui-label-line-height;
-  margin-bottom: 0.25rem;
-  display: block;
-  // RESPONSIVE
-  @include bp1 {
-    font-size: $ui-label-font-size-sm;
-  }
+  margin-bottom: 0;
 }
 
-// CONTENT STYLES
-p.content {
-  margin-bottom: 1rem;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-// note ON EACH TONE TOGGLE
-p.note-display {
-  // LAYOUT
-  margin: 0;
-  // APPEARANCE
+// TONE TOGGLE note DISPLAY TEXT
+.tone-toggle__note-display {
   color: inherit;
   font-size: $note-display-font-size;
-  line-height: $note-display-line-height;
   font-weight: bolder;
+  line-height: $note-display-line-height;
+  margin: 0;
   pointer-events: none;
-  // RESPONSIVE
+
   @include bp2 {
     font-size: $note-display-font-size-sm;
   }
 }
 
-p.beat-display {
-  @extend .note-display;
+// TONE TOGGLE BEAT DISPLAY TEXT
+.tone-toggle__beat-display {
+  @extend .tone-toggle__note-display;
   font-size: $note-display-font-size-sm;
 }
-
-.inactive-display {
-  display: none;
-}
-
-// GLOBAL MODIFIERS
-.heavy { font-weight: $font-weight-heavy; }
-.small { font-size:  $ui-label-font-size; }
