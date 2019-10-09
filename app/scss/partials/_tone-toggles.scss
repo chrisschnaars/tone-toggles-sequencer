@@ -4,13 +4,12 @@
 
 // CONTAINER FOR EACH BEAT'S TONE TOGGLES
 .beat-container {
-  @include align-items(center);
-  @include flexbox;
-  @include flex-flow(column nowrap);
-  height: 100%;
-  @include justify-content(space-between);
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   padding: 1.25rem;
-  @include transition(all $animate-time-fast ease-in-out);
+  transition: all $animate-time-fast ease-in-out;
   width: 100%;
 
   @include bp2 {
@@ -18,9 +17,10 @@
   }
 
   @include bp1 {
-    padding: 0.5rem 1rem;
-    @include flex-flow(row nowrap);
-    @include justify-content(flex-start);
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
   }
 }
 
@@ -39,20 +39,20 @@
 
 // TONE TOGGLE DEFAULT STATE
 .tone-toggle {
-  @include align-items(center);
+  align-items: center;
   background-color: $gray-1;
   border: 0.125rem solid $gray-3;
-  @include border-radius($btn-border-radius);
+  border-radius: $btn-border-radius;
   color: $gray-4;
-  @include flexbox();
-  @include flex-flow(column nowrap);
-  @include flex(1);
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 0 0;
   height: 100%;
-  @include justify-content(center);
+  justify-content: center;
   margin-bottom: 1rem;
   min-width: 1rem;
   transition: transform $animate-time-fast ease-in-out;
-  @include transition(all $animate-time-fast ease-in-out);
+  transition: all $animate-time-fast ease-in-out;
   width: 100%;
 
   // REMOVE BOTTOM MARGIN FROM LAST IN CONTAINER
@@ -63,11 +63,8 @@
   // SMALLER SCREENS
   @include bp1 {
    width: 100%;
-   margin-right: 0;
-   margin-bottom: 0.5rem;
-   &:last-child {
-     margin-bottom: 0;
-  }
+   margin-bottom: 0;
+   margin-right: 0.25rem;
  }
 }
 
@@ -80,67 +77,9 @@
 
 // GLOBAL TOGGLE HOVER BEHAVIOR
 .tone-toggle:hover {
-  // APPEARANCE
-  cursor: pointer;
   background-color: $gray-3;
   border-color: $gray-3;
-  // TEXT
   color: $gray-5;
-  // BEHAVIOR
-  @include scale(0.985);
+  cursor: pointer;
+  transform: scale(0.985);
 }
-
-
-
-
-// /// ===========================================
-// /// TONE TOGGLES
-// /// ===========================================
-//
-// // TONE TOGGLE DEFAULT STATE
-// .tone-toggle {
-//  // LAYOUT
-//  width: 100%;
-//  min-width: $spacing-unit;
-//  margin-bottom: 1rem;
-//  &:last-child {
-//    margin-bottom: 0;
-//  }
-//  // FLEX CONTAINER SETTINGS
-//  @include flexbox();
-//  @include flex-flow(column nowrap);
-//  @include justify-content(center);
-//  @include align-items(center);
-//  // FLEX ITEM SETTINGS
-//  @include flex(1);
-//  // APPERANCE
-//  background-color: $gray-1;
-//  @include border-radius($btn-border-radius);
-//  border: 0.125rem solid $gray-3;
-//  // TEXT
-//  color: $gray-4;
-//  // BEHAVIOR
-//  transition: transform $animate-time-fast ease-in-out;
-//  @include transition(all $animate-time-fast ease-in-out);
-//  @include bp1 {
-//    width: 100%;
-//    height: 2.5rem;
-//    margin-right: 0.5rem;
-//    margin-bottom: 0;
-//    &:last-child {
-//      margin-right: 0;
-//    }
-//  }
-// }
-//
-// // GLOBAL TOGGLE HOVER BEHAVIOR
-// .tone-toggle:hover {
-//   // APPEARANCE
-//   cursor: pointer;
-//   background-color: $gray-3;
-//   border-color: $gray-3;
-//   // TEXT
-//   color: $gray-5;
-//   // BEHAVIOR
-//   @include scale(0.985);
-// }
