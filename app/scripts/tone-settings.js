@@ -3,7 +3,7 @@ TONE LIRBARY
 ************************************************/
 
 // ROOT FREQUENCY FOR KEYS
-const keyFrequencies = [ 110, 130.81, 146.83, 164.81, 196.00 ];
+const keyFrequencies = [ 110, 130.81, 146.83, 164.81, 98.00 ];
 const keyRootNotes = [ "A", "C", "D", "E", "G" ]; // displa note for each freq
 
 // INTERVAL FOR EACH NOTE OF VARIOUS SCALE
