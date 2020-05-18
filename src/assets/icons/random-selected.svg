@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>random</title>
+    <desc>Created with Sketch.</desc>
+    <g id="random" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="bevel">
+        <g id="star" transform="translate(9.000000, 8.000000)" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="5.33333333">
+            <polygon id="Path" points="24 0 31.416 15.024 48 17.448 36 29.136 38.832 45.648 24 37.848 9.168 45.648 12 29.136 0 17.448 16.584 15.024"></polygon>
+        </g>
+    </g>
+</svg>
