@@ -11,3 +11,7 @@ The special part here is the random function, which is activated by the star but
 ## Audio Details
 
 The set of tones is randomly selected from a root note's major and minor keys. If you don't like the selection, hit refresh to get new notes.
+
+## Add
+
+-   how to get up and running

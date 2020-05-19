@@ -1,0 +1,58 @@
+$_controls-container_max-width: 80rem;
+
+.control-bar {
+    border-top: 1px solid $color_gray-2;
+    display: flex;
+    justify-content: center;
+}
+
+.control-bar__inner-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $_controls-container_max-width;
+}
+
+.control-bar__control-container {
+    flex: 1;
+    margin: 0 $space-2;
+    width: 100%;
+}
+
+.control-bar__control-container--small {
+    flex: 0;
+}
+
+.control-bar__control-container--horizontal-center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.control-bar__control-container--vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.control-bar__control-label-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.control-bar__control-label {
+    font-size: $font-size_16;
+    margin-bottom: 0.25rem;
+}
+
+.control-bar__toggle-group {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.control-bar__slider-container {
+    display: flex;
+    flex-direction: column;
+    height: $control_size_base;
+    justify-content: center;
+}

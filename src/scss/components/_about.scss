@@ -1,0 +1,52 @@
+.about {
+    background-color: $color_gray-1;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: auto;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity $transition-duration-base $transition-timing-base;
+    transition: visibility $transition-duration-base $transition-timing-base;
+    visibility: hidden;
+    width: 100%;
+    z-index: 100;
+
+    display: none;
+}
+
+.about--visible {
+    opacity: 0.99;
+    pointer-events: auto;
+    transition: opacity $transition-duration-base $transition-timing-base;
+    transition: visibility $transition-duration-base $transition-timing-base;
+    visibility: visible;
+}
+
+.about__close-btn-container {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    @media (min-width: $breakpoint_small) {
+        right: 3rem;
+        top: 1.25rem;
+    }
+}
+
+.about__content-container {
+    margin: 0 auto;
+    // max-width: $content-max-width;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    width: 100%;
+}
+
+.about__content-section {
+    margin-bottom: 2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,78 @@
+$_primary-btn-size: 4rem;
+
+.btn {
+    height: $control_size_base;
+}
+
+.btn--toggle {
+    border-radius: 0;
+    box-shadow: none;
+    flex: 1 1 0;
+
+    &:first-child {
+        border-radius: $border-radius_btn 0 0 $border-radius_btn;
+    }
+
+    &:last-child {
+        border-radius: 0 $border-radius_btn $border-radius_btn 0;
+    }
+
+    &:focus {
+        z-index: 1;
+    }
+}
+
+.btn--toggle-selected {
+    background-color: $color_primary;
+    color: $color-white;
+    opacity: 1;
+
+    &:focus,
+    &:hover {
+        background-color: $color_primary-dark;
+    }
+}
+
+.btn--icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.btn--round {
+    width: $control_size_base;
+}
+
+.btn--primary {
+    background-color: $color_primary;
+    height: $_primary-btn-size;
+    width: $_primary-btn-size;
+
+    &:focus,
+    &:hover {
+        background-color: $color_primary-dark;
+    }
+}
+
+// Icon backgrounds
+.btn--clear {
+    background-image: url(../assets/icons/clear.svg);
+}
+
+.btn--close {
+    background-image: url(../assets/icons/close.svg);
+}
+
+.btn--pause {
+    background-image: url(../assets/icons/pause.svg);
+}
+
+.btn--play {
+    background-image: url(../assets/icons/play.svg);
+}
+
+.btn--refresh {
+    background-image: url(../assets/icons/refresh.svg);
+}

@@ -10,23 +10,19 @@
             data-head="true"
         />
 
-        <!-- STYLESHEET -->
-        <link rel="stylesheet" href="./scss/index.scss" />
-
-        <!-- GOOGLE FONTS -->
+        <link rel="stylesheet" href="./scss/index.scss" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet" />
     </head>
 
     <body>
-        <div class="site-container">
-            <!-- HEADER BAR -->
-            <header class="top-bar">
-                <div class="top-bar__inner-container">
-                    <div class="top-bar__logo">
-                        <h1>Tone Toggles Sequencer</h1>
-                    </div>
+        <div class="site">
+            <header class="site__header container top-bar">
+                <div
+                    class="container__inner-container container__inner-container--small top-bar__inner-container"
+                >
+                    <h1>Tone Toggles Sequencer</h1>
 
-                    <a href="#" class="a--no-border js-about-open-btn"
+                    <a href="#" class="js-about-open-btn"
                         ><p>
                             Info
                         </p></a
@@ -34,37 +30,33 @@
                 </div>
             </header>
 
-            <!-- CONTAINER FOR TONE TOGGLES -->
-            <main class="main-container"></main>
+            <main class="site__main container tone-toggles">
+                <div class="tone-toggles__container"></div>
+            </main>
 
-            <!-- CONTROL BAR -->
-            <section class="control-bar">
-                <div class="control-bar__inner-container">
-                    <!-- PLAY/PAUSE BUTTON -->
-                    <div class="control-bar__control-container control-bar__control-container--btn">
-                        <div class="control-bar__control control-bar__control--primary">
-                            <button
-                                class="control-bar__btn btn btn--icon btn--primary btn--play js-play-toggle"
-                                type="button"
-                                name="mute"
-                                aria-label="Play"
-                            ></button>
-                        </div>
+            <footer class="site__footer container control-bar">
+                <div
+                    class="container__inner-container container__inner-container--small control-bar__inner-container"
+                >
+                    <!-- Play Button -->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--vertical-center"
+                    >
+                        <button
+                            class="btn btn--icon btn--primary btn--play js-play-toggle"
+                            type="button"
+                            name="mute"
+                            aria-label="Play"
+                        ></button>
                     </div>
 
-                    <!-- SOUND BANK SELECTOR -->
-                    <div class="control-bar__control-container bp1-hidden">
-                        <!-- LABEL -->
-                        <div class="control-bar__control-label-container">
-                            <p class="control-bar__control-label">Sound Bank</p>
-                        </div>
+                    <!-- Sound Bank Selector for Larger Screens -->
+                    <div class="control-bar__control-container mobile-hidden">
+                        <p class="control-bar__control-label">Sound Bank</p>
 
-                        <!-- SELECTION OPTIONS -->
-                        <div
-                            class="control-bar__control control-bar__control--toggle-group js-sound-bank-toggle"
-                        >
+                        <div class="control-bar__toggle-group js-sound-bank-toggle">
                             <button
-                                class="control-bar__btn btn btn--toggle btn--toggle-selected"
+                                class="btn btn--toggle btn--toggle-selected"
                                 name="sound-bank"
                                 value="tones"
                                 type="button"
@@ -72,7 +64,7 @@
                                 Tones
                             </button>
                             <button
-                                class="control-bar__btn btn btn--toggle"
+                                class="btn btn--toggle"
                                 name="sound-bank"
                                 value="beats"
                                 type="button"
@@ -82,38 +74,32 @@
                         </div>
                     </div>
 
-                    <!-- SMALL SCREEN SOUND BANK SELECTOR -->
+                    <!-- Sound Bank Selector for Smaller Screens -->
                     <div
-                        class="control-bar__control-container control-bar__control-container--btn bp1-visible"
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center mobile-visible"
                     >
-                        <div class="control-bar__control-label-container">
-                            <p class="control-bar__control-label">Bank</p>
-                        </div>
+                        <p class="control-bar__control-label">Bank</p>
 
-                        <div class="control-bar__control">
-                            <button
-                                class="control-bar__btn btn btn--icon js-sound-bank-toggle-mini"
-                                name="sound-bank"
-                                type="button"
-                                aria-label="Toggle Sound Bank"
-                            >
-                                Tones
-                            </button>
-                        </div>
+                        <button
+                            class="btn btn--icon js-sound-bank-toggle-mini"
+                            name="sound-bank"
+                            type="button"
+                            aria-label="Toggle Sound Bank"
+                        >
+                            Tones
+                        </button>
                     </div>
 
-                    <!-- TEMPO CONTROL -->
+                    <!-- Tempo Control -->
                     <div class="control-bar__control-container">
-                        <div
-                            class="control-bar__control-label-container control-bar__control-label-container--with-readout"
-                        >
+                        <div class="control-bar__control-label-group">
                             <p class="control-bar__control-label">Tempo</p>
-                            <p class="control-bar__control-readout js-tempo-readout">120</p>
+                            <p class="control-bar__control-label js-tempo-readout">120</p>
                         </div>
 
-                        <div class="control-bar__control control-bar__control--ctrY">
+                        <div class="control-bar__slider-container">
                             <input
-                                class="control-bar__slider range-slider js-tempo-control"
+                                class="range-slider js-tempo-control"
                                 name="tempo"
                                 type="range"
                                 role="slider"
@@ -128,50 +114,39 @@
                         </div>
                     </div>
 
-                    <!-- REFRESH NOTES -->
-                    <div class="control-bar__control-container control-bar__control-container--btn">
-                        <div class="control-bar__control-label-container">
-                            <p class="control-bar__control-label">Refresh</p>
-                        </div>
+                    <!-- Refresh Button -->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
+                    >
+                        <p class="control-bar__control-label">Refresh</p>
 
-                        <div class="control-bar__control">
-                            <button
-                                class="control-bar__btn btn btn--icon btn--refresh js-refresh-btn"
-                                type="button"
-                                name="refresh"
-                                aria-label="Refresh Notes"
-                            ></button>
-                        </div>
+                        <button
+                            class="btn btn--icon btn--round btn--refresh js-refresh-btn"
+                            type="button"
+                            name="refresh"
+                            aria-label="Refresh Notes"
+                        ></button>
                     </div>
 
-                    <!-- CLEAR SELECTIONS -->
-                    <div class="control-bar__control-container control-bar__control-container--btn">
-                        <div class="control-bar__control-label-container">
-                            <p class="control-bar__control-label">Clear</p>
-                        </div>
+                    <!-- Clear Button-->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
+                    >
+                        <p class="control-bar__control-label">Clear</p>
 
-                        <div class="control-bar__control">
-                            <button
-                                class="control-bar__btn btn btn--icon btn--clear js-clear-btn"
-                                type="button"
-                                name="clear"
-                                aria-label="Clear Selection"
-                            ></button>
-                        </div>
+                        <button
+                            class="btn btn--icon btn--round btn--clear js-clear-btn"
+                            type="button"
+                            name="clear"
+                            aria-label="Clear Selection"
+                        ></button>
                     </div>
-
-                    <!-- END CONTROL BAR INNER CONTAINER -->
                 </div>
-
-                <!-- END CONTROL BAR SECTION -->
-            </section>
-
-            <!-- END PAGE CONTAINER -->
+            </footer>
         </div>
 
-        <!-- ABOUT MODAL  -->
+        <!-- About Modal  -->
         <div class="about">
-            <!-- CLOSE BUTTON -->
             <div class="about__close-btn-container">
                 <button
                     class="about__close-btn btn btn--icon btn--close js-about-close-btn"
@@ -181,14 +156,11 @@
                 ></button>
             </div>
 
-            <!-- ABOUT CONTENT -->
             <section class="about__content-container">
-                <!-- PROJECT TITLE -->
                 <section class="about__content-section">
                     <h2>Tone Toggles Sequencer</h2>
                 </section>
 
-                <!-- HOW TO PLAY -->
                 <section class="about__content-section">
                     <h3>How To Play</h3>
                     <p>
@@ -211,7 +183,6 @@
                     </p>
                 </section>
 
-                <!-- ABOUT -->
                 <section class="about__content-section">
                     <h3>About Tone Toggles Sequencer</h3>
                     <p>
@@ -231,11 +202,7 @@
                         and generative sound tools <a href="https://schnaars.xyz/">here</a>.
                     </p>
                 </section>
-
-                <!-- END ABOUT CONTENT -->
             </section>
-
-            <!-- END ABOUT MODAL -->
         </div>
 
         <!-- Load Main Script  -->
