@@ -33,5 +33,6 @@ p {
 
     @media (min-width: $breakpoint_small) {
         font-size: $font-size_18;
+        line-height: 1.75rem;
     }
 }

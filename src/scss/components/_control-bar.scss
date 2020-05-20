@@ -14,8 +14,12 @@ $_controls-container_max-width: 80rem;
 
 .control-bar__control-container {
     flex: 1;
-    margin: 0 $space-2;
+    margin: 0 $space-2 0 0;
     width: 100%;
+
+    @media (min-width: $breakpoint_small) {
+        margin: 0 $space-2;
+    }
 }
 
 .control-bar__control-container--small {
@@ -42,6 +46,7 @@ $_controls-container_max-width: 80rem;
 
 .control-bar__control-label {
     font-size: $font-size_16;
+    line-height: 1.5;
     margin-bottom: 0.25rem;
 }
 
