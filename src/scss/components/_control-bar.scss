@@ -8,18 +8,14 @@ $_controls-container_max-width: 80rem;
 
 .control-bar__inner-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     max-width: $_controls-container_max-width;
 }
 
 .control-bar__control-container {
     flex: 1;
-    margin: 0 $space-2 0 0;
+    margin: 0 $space-2;
     width: 100%;
-
-    @media (min-width: $breakpoint_small) {
-        margin: 0 $space-2;
-    }
 }
 
 .control-bar__control-container--small {

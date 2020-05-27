@@ -3,11 +3,17 @@
 }
 
 .container__inner-container {
-    padding: $space-3;
+    padding: $space-2;
     width: 100%;
+
+    @media (min-width: $breakpoint_small) {
+        padding: $space-3;
+    }
 }
 
 .container__inner-container--small {
-    padding-bottom: $space-2;
-    padding-top: $space-2;
+    @media (min-width: $breakpoint_small) {
+        padding-bottom: $space-2;
+        padding-top: $space-2;
+    }
 }

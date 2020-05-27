@@ -1,18 +1,20 @@
-import toneToggleSettings from './tone-toggle-settings.js';
+import player from './player';
+import toneToggleSettings from '../tone-toggles/tone-toggle-settings';
 import keySettings from './key-settings';
 import intervalSettings from './interval-settings';
 import scaleSettings from './scale-settings';
-import utils from './utils';
+import utils from '../utils';
 
 const audioSettings = {
     key: null,
     keyIndex: null,
-    toneValues: [],
     toneDisplays: [],
+    beatDisplays: ['Kick', 'Snare', 'Hat', 'Clap', 'Tom'],
 
     setup() {
         this.keySelection();
         this.noteSelection();
+        player.setupPlayer();
     },
 
     keySelection() {
@@ -29,10 +31,10 @@ const audioSettings = {
 
     noteSelection() {
         // Clear existing array
-        this.toneValues = [];
+        player.tones = [];
         this.toneDisplays = [];
 
-        // Randomly select id for each tone
+        // Randomly select tones from array
         let selection = [];
         while (selection.length < toneToggleSettings.numberofTogglesPerRow - 1) {
             const r = utils.getRandomInteger(1, intervalSettings.length - 1);
@@ -49,7 +51,8 @@ const audioSettings = {
         // Set tones and note display based on selection id
         for (let i = 0; i < selection.length; i++) {
             const id = selection[i];
-            this.toneValues.push(intervalSettings[id]);
+            // Add note and note display to array
+            player.tones.push(intervalSettings[id] * this.key);
             this.toneDisplays.push(scaleSettings[this.keyIndex][id]);
         }
     },

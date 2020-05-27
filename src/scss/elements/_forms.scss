@@ -25,6 +25,10 @@ button {
     text-decoration: none;
     transition: background-color $transition-duration-base $transition-timing-base;
 
+    &:active {
+        background-color: $color_gray-4;
+    }
+
     &:hover,
     &:focus {
         background-color: $color_gray-3;

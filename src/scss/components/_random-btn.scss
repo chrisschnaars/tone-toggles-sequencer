@@ -1,0 +1,16 @@
+.random-btn {
+    background-image: url(../assets/icons/random-unselected.svg);
+}
+
+.random-btn--active {
+    background-color: $color_primary;
+    background-image: url(../assets/icons/random-selected.svg);
+
+    &:focus {
+        background-color: $color_primary;
+    }
+
+    &:hover {
+        background-color: $color_primary-dark;
+    }
+}

@@ -10,7 +10,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    padding: $space-1 $space-2;
+    padding: 0 $space-1;
 
     @media (min-width: $breakpoint_small) {
         flex-direction: row;
@@ -23,7 +23,8 @@
     flex: 1;
     flex-direction: row;
     justify-content: flex-start;
-    padding: $space-1;
+    padding: $space-2;
+    transition: background-color $transition-duration-base $transition-timing-base;
     width: 100%;
 
     @media (min-width: $breakpoint_small) {
@@ -34,7 +35,11 @@
 }
 
 .tone-toggles__beat-container--active {
-    background-color: $color_gray-2;
+    background-color: $color_gray-1;
+
+    .tone-toggles__toggle--active {
+        transform: scale(0.95);
+    }
 }
 
 .tone-toggles__toggle {
@@ -67,7 +72,10 @@
 }
 
 .tone-toggles__display {
+    display: block;
     font-size: $font-size_20;
+    pointer-events: none;
+    user-select: none;
 }
 
 .tone-toggles__display--inactive {

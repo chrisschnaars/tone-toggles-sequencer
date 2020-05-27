@@ -10,6 +10,9 @@
             data-head="true"
         />
 
+        <link rel="icon" type="image/png" href="./assets/favicons/favicon.ico" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+
         <link rel="stylesheet" href="./scss/index.scss" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet" />
     </head>
@@ -43,7 +46,7 @@
                         class="control-bar__control-container control-bar__control-container--small control-bar__control-container--vertical-center"
                     >
                         <button
-                            class="btn btn--icon btn--primary btn--play js-play-toggle"
+                            class="btn btn--primary btn--large btn--icon btn--round btn--round--large play-btn js-play-toggle"
                             type="button"
                             name="mute"
                             aria-label="Play"
@@ -56,7 +59,7 @@
 
                         <div class="control-bar__toggle-group js-sound-bank-toggle">
                             <button
-                                class="btn btn--toggle btn--toggle-selected"
+                                class="btn btn--toggle btn--toggle-selected js-sound-bank-toggle-btn"
                                 name="sound-bank"
                                 value="tones"
                                 type="button"
@@ -64,7 +67,7 @@
                                 Tones
                             </button>
                             <button
-                                class="btn btn--toggle"
+                                class="btn btn--toggle js-sound-bank-toggle-btn"
                                 name="sound-bank"
                                 value="beats"
                                 type="button"
@@ -81,20 +84,23 @@
                         <p class="control-bar__control-label">Bank</p>
 
                         <button
-                            class="btn btn--icon js-sound-bank-toggle-mini"
+                            class="btn js-sound-bank-toggle-mini js-sound-bank-toggle"
                             name="sound-bank"
                             type="button"
                             aria-label="Toggle Sound Bank"
+                            value="beats"
                         >
-                            Tones
+                            Beats
                         </button>
                     </div>
 
                     <!-- Tempo Control -->
-                    <div class="control-bar__control-container">
+                    <div class="control-bar__control-container mobile-hidden">
                         <div class="control-bar__control-label-group">
                             <p class="control-bar__control-label">Tempo</p>
-                            <p class="control-bar__control-label js-tempo-readout">120</p>
+                            <p class="control-bar__control-label js-tempo-readout">
+                                120
+                            </p>
                         </div>
 
                         <div class="control-bar__slider-container">
@@ -103,11 +109,11 @@
                                 name="tempo"
                                 type="range"
                                 role="slider"
-                                min="40"
+                                min="80"
                                 max="220"
                                 value="120"
                                 step="1"
-                                aria-valuemin="40"
+                                aria-valuemin="80"
                                 aria-valuemax="220"
                                 aria-valuenow="120"
                             />
@@ -146,11 +152,11 @@
         </div>
 
         <!-- About Modal  -->
-        <div class="about container">
+        <div class="overlay about container">
             <div class="container__inner-container">
-                <div class="about__close-btn-container">
+                <div class="overlay__close-btn-container">
                     <button
-                        class="about__close-btn btn btn--icon btn--round btn--close js-about-close"
+                        class="overlay__close-btn btn btn--icon btn--round btn--close js-about-close"
                         type="button"
                         name="Close"
                         aria-label="Close"

@@ -4,6 +4,18 @@ $_primary-btn-size: 4rem;
     height: $control_size_base;
 }
 
+.btn--large {
+    height: $_primary-btn-size;
+}
+
+.btn--primary {
+    background-color: $color_primary;
+    &:focus,
+    &:hover {
+        background-color: $color_primary-dark;
+    }
+}
+
 .btn--toggle {
     border-radius: 0;
     box-shadow: none;
@@ -27,7 +39,10 @@ $_primary-btn-size: 4rem;
     color: $color-white;
     opacity: 1;
 
-    &:focus,
+    &:focus {
+        background-color: $color_primary;
+    }
+
     &:hover {
         background-color: $color_primary-dark;
     }
@@ -45,15 +60,8 @@ $_primary-btn-size: 4rem;
     width: $control_size_base;
 }
 
-.btn--primary {
-    background-color: $color_primary;
-    height: $_primary-btn-size;
+.btn--round--large {
     width: $_primary-btn-size;
-
-    &:focus,
-    &:hover {
-        background-color: $color_primary-dark;
-    }
 }
 
 // Icon backgrounds
@@ -63,14 +71,6 @@ $_primary-btn-size: 4rem;
 
 .btn--close {
     background-image: url(../assets/icons/close.svg);
-}
-
-.btn--pause {
-    background-image: url(../assets/icons/pause.svg);
-}
-
-.btn--play {
-    background-image: url(../assets/icons/play.svg);
 }
 
 .btn--refresh {

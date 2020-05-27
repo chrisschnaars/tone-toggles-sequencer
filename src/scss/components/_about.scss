@@ -1,27 +1,3 @@
-.about {
-    background-color: $color_gray-1;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    overflow: auto;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    transition: opacity $transition-duration-base $transition-timing-base;
-    transition: visibility $transition-duration-base $transition-timing-base;
-    visibility: hidden;
-    width: 100%;
-    z-index: 100;
-}
-
-.about--visible {
-    opacity: 0.99;
-    pointer-events: auto;
-    transition: opacity $transition-duration-base $transition-timing-base;
-    transition: visibility $transition-duration-base $transition-timing-base;
-    visibility: visible;
-}
-
 .about__close-btn-container {
     position: absolute;
     right: $space-2;
@@ -31,8 +7,7 @@
 .about__content-container {
     margin: 0 auto;
     max-width: 38rem;
-    padding-bottom: 5rem;
-    padding-top: 5rem;
+    padding: $space-8 $space-2;
     width: 100%;
 }
 

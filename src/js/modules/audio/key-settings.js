@@ -1,6 +1,6 @@
 const keySettings = [
     {
-        frequency: 110,
+        frequency: 220,
         note: 'A',
     },
     {
@@ -16,7 +16,7 @@ const keySettings = [
         note: 'E',
     },
     {
-        frequency: 98.0,
+        frequency: 196.0,
         note: 'G',
     },
 ];
