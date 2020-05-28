@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+}
+
+.container__inner-container {
+    padding: $space-2;
+    width: 100%;
+
+    @media (min-width: $breakpoint_small) {
+        padding: $space-3;
+    }
+}
+
+.container__inner-container--small {
+    @media (min-width: $breakpoint_small) {
+        padding-bottom: $space-2;
+        padding-top: $space-2;
+    }
+}

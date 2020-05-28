@@ -1,0 +1,4 @@
+// Global box shadow
+@mixin button_box-shadow() {
+    box-shadow: 0px 2px 4px 0px rgba(17, 17, 18, 0.15);
+}

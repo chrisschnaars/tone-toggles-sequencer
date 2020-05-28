@@ -1,11 +1,10 @@
 # admin files
 /-admin
+notes.txt
 
 # BUILD FILES
-/tmp
-*/assets
+/dist
 .sass-cache
 
 #DEPENDENCIES
 /node_modules
-package-lock.json

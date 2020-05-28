@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title data-head="true">Tone Toggles Sequencer</title>
+        <meta
+            name="description"
+            content="Tone Toggles Sequencer is a randomness-powered melody and beat-making tool for kids and adults."
+            data-head="true"
+        />
+
+        <link rel="icon" type="image/png" href="./assets/favicons/favicon.ico" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+
+        <link rel="stylesheet" href="./scss/index.scss" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="site">
+            <header class="site__header container top-bar">
+                <div
+                    class="container__inner-container container__inner-container--small top-bar__inner-container"
+                >
+                    <h1 class="top-bar__site-title">Tone Toggles Sequencer</h1>
+
+                    <a href="#" class="js-about-open"
+                        ><p>
+                            Info
+                        </p></a
+                    >
+                </div>
+            </header>
+
+            <main class="site__main container tone-toggles">
+                <div class="tone-toggles__container"></div>
+            </main>
+
+            <footer class="site__footer container control-bar">
+                <div
+                    class="container__inner-container container__inner-container--small control-bar__inner-container"
+                >
+                    <!-- Play Button -->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--vertical-center"
+                    >
+                        <button
+                            class="btn btn--primary btn--large btn--icon btn--round btn--round--large play-btn js-play-toggle"
+                            type="button"
+                            name="mute"
+                            aria-label="Play"
+                        ></button>
+                    </div>
+
+                    <!-- Sound Bank Selector for Larger Screens -->
+                    <div class="control-bar__control-container mobile-hidden">
+                        <p class="control-bar__control-label">Sound Bank</p>
+
+                        <div class="control-bar__toggle-group js-sound-bank-toggle">
+                            <button
+                                class="btn btn--toggle btn--toggle-selected js-sound-bank-toggle-btn"
+                                name="sound-bank"
+                                value="tones"
+                                type="button"
+                            >
+                                Tones
+                            </button>
+                            <button
+                                class="btn btn--toggle js-sound-bank-toggle-btn"
+                                name="sound-bank"
+                                value="beats"
+                                type="button"
+                            >
+                                Beats
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sound Bank Selector for Smaller Screens -->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center mobile-visible"
+                    >
+                        <p class="control-bar__control-label">Bank</p>
+
+                        <button
+                            class="btn js-sound-bank-toggle-mini js-sound-bank-toggle"
+                            name="sound-bank"
+                            type="button"
+                            aria-label="Toggle Sound Bank"
+                            value="beats"
+                        >
+                            Beats
+                        </button>
+                    </div>
+
+                    <!-- Tempo Control -->
+                    <div class="control-bar__control-container">
+                        <div class="control-bar__control-label-group">
+                            <p class="control-bar__control-label">Tempo</p>
+                            <p class="control-bar__control-label mobile-hidden js-tempo-readout">
+                                120
+                            </p>
+                        </div>
+
+                        <div class="control-bar__slider-container">
+                            <input
+                                class="range-slider js-tempo-control"
+                                name="tempo"
+                                type="range"
+                                role="slider"
+                                min="80"
+                                max="220"
+                                value="120"
+                                step="1"
+                                aria-valuemin="80"
+                                aria-valuemax="220"
+                                aria-valuenow="120"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Refresh Button -->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
+                    >
+                        <p class="control-bar__control-label">Refresh</p>
+
+                        <button
+                            class="btn btn--icon btn--round btn--refresh js-refresh-btn"
+                            type="button"
+                            name="refresh"
+                            aria-label="Refresh Notes"
+                        ></button>
+                    </div>
+
+                    <!-- Clear Button-->
+                    <div
+                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
+                    >
+                        <p class="control-bar__control-label">Clear</p>
+
+                        <button
+                            class="btn btn--icon btn--round btn--clear js-clear-btn"
+                            type="button"
+                            name="clear"
+                            aria-label="Clear Selection"
+                        ></button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- About Modal  -->
+        <div class="overlay about container">
+            <div class="container__inner-container">
+                <div class="overlay__close-btn-container">
+                    <button
+                        class="overlay__close-btn btn btn--icon btn--round btn--close js-about-close"
+                        type="button"
+                        name="Close"
+                        aria-label="Close"
+                    ></button>
+                </div>
+            </div>
+
+            <section class="about__content-container">
+                <section class="about__content-section">
+                    <h2>Tone Toggles Sequencer</h2>
+                </section>
+
+                <section class="about__content-section">
+                    <h3>How To Play</h3>
+                    <p>
+                        For the most part, this works like any other sequencer. Click or tap on the
+                        gray boxes (aka "Tone Toggles") to create your pattern, and hit the Play
+                        button to hear the results.
+                    </p>
+
+                    <p>
+                        The special part here is the random function, which is activated by the star
+                        button beneath each set of Tone Toggles. When this is on, the computer will
+                        decide which (if any) notes to play, giving your sequence a bit of an
+                        unexpected flair.
+                    </p>
+
+                    <p>
+                        The set of tones is randomly selected from a root note's major and minor
+                        keys. If you don't like the selection, hit refresh to get new notes. Add
+                        some beats, set your tempo and enjoy your unique musical creation.
+                    </p>
+                </section>
+
+                <section class="about__content-section">
+                    <h3>About Tone Toggles Sequencer</h3>
+                    <p>
+                        Tone Toggles Sequencer is a musical sequencing tool that blends the
+                        creativity of the user and the unpredictability of
+                        computer-generated-randomness to produce unique musical creations with each
+                        use.
+                    </p>
+
+                    <p>
+                        This was created by
+                        <a href="https://chrisschnaars.com/">Chris Schnaars</a>. Please
+                        <a href="mailto:hello@chrisschnaars.com">get in touch</a> with any
+                        questions, problems, or feedback. You can find more info on Tone Toggles
+                        Sequencer at
+                        <a href="https://github.com/chrisschnaars/tone-toggles-sequencer">Github</a>
+                        and generative sound tools <a href="https://schnaars.xyz/">here</a>.
+                    </p>
+                </section>
+            </section>
+        </div>
+
+        <!-- Load Main Script  -->
+        <script src="./js/index.js"></script>
+    </body>
+</html>
