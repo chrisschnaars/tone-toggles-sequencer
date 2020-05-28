@@ -23,7 +23,7 @@
     flex: 1;
     flex-direction: row;
     justify-content: flex-start;
-    padding: $space-2;
+    padding: $space-1;
     transition: background-color $transition-duration-base $transition-timing-base;
     width: 100%;
 
@@ -31,6 +31,10 @@
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    @media (min-width: $breakpoint_medium) {
+        padding: $space-2;
     }
 }
 
@@ -73,9 +77,14 @@
 
 .tone-toggles__display {
     display: block;
-    font-size: $font-size_20;
+    font-size: $font-size_16;
+    line-height: 1;
     pointer-events: none;
     user-select: none;
+
+    @media (min-width: $breakpoint_medium) {
+        font-size: $font-size_20;
+    }
 }
 
 .tone-toggles__display--inactive {

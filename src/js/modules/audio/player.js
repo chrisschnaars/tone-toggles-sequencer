@@ -95,6 +95,7 @@ const player = {
 
     refreshActiveTones() {
         this.resetActiveTones();
+        this.sequence.removeAll();
 
         for (let i = 0; i < toneToggleSettings.toneToggles.length; i++) {
             const tt = toneToggleSettings.toneToggles[i];

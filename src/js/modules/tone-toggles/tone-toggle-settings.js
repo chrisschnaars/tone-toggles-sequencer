@@ -1,7 +1,6 @@
 import ToneToggle from './tone-toggle';
 import controlBar from '../control-bar/control-bar';
 import player from '../audio/player';
-import audioSettings from '../audio/audio-settings';
 import colorSettings from '../audio/color-settings';
 import utils from '../utils';
 
@@ -10,8 +9,11 @@ const toneToggleSettings = {
     numberofTogglesPerRow: 5,
     toneToggles: [],
     beatMode: false,
-    randomBeats: [[], [], [], [], [], [], [], []],
+    toneDisplays: [],
+    beatDisplays: ['Kick', 'Snare', 'Hat', 'Clap', 'Tom'],
+    timerIds: [[], [], [], [], [], [], [], []],
     animationDelay: 0,
+    intervalDelay: 0,
 
     setupToneToggles() {
         this.createToggleObjects();
@@ -20,6 +22,7 @@ const toneToggleSettings = {
         this.setupRandomButtonInteraction();
         this.updateToggleDisplays();
         this.setAnimationDelay();
+        this.animateToggles();
     },
 
     createToggleObjects() {
@@ -106,6 +109,19 @@ const toneToggleSettings = {
         });
     },
 
+    animateToggles() {
+        this.toneToggles.forEach((item) => {
+            const delay1 = 200 + item.row * 80 + item.beat * 80;
+            const delay2 = 360;
+            setTimeout(function () {
+                item.toggleColors(true, item.toneColor);
+                setTimeout(function () {
+                    item.toggleColors();
+                }, delay2);
+            }, delay1);
+        });
+    },
+
     updateToggleDisplays() {
         this.setToggleText();
         this.setToggleColor();
@@ -116,10 +132,11 @@ const toneToggleSettings = {
 
         this.toneToggles.forEach((item, index) => {
             const row = item.row;
+
             // Update display text
             const displayText = this.beatMode
-                ? audioSettings.beatDisplays[row]
-                : audioSettings.toneDisplays[row];
+                ? this.beatDisplays[row]
+                : this.toneDisplays[row].note;
             displays[index].innerHTML = displayText;
         });
     },
@@ -129,7 +146,7 @@ const toneToggleSettings = {
         this.toneToggles.forEach((item) => {
             const row = item.row;
             // Update display color
-            item.toneColor = this.getActiveColor(audioSettings.toneDisplays[row]);
+            item.toneColor = this.toneDisplays[row].color;
 
             if (!this.beatMode) {
                 item.toggleColors(item.activeTone, item.toneColor);
@@ -144,16 +161,17 @@ const toneToggleSettings = {
             controlBar.updateSoundBankToggleState();
         }
 
-        if (this.randomBeats[beatId].length === 0) {
-            // start random selection
-            const delay = this.animationDelay * 8;
-            this.selectRandomTones(beatId);
-            const intervalId = setInterval(this.selectRandomTones, delay, beatId);
-            this.randomBeats[beatId].push(intervalId);
+        if (this.timerIds[beatId].length === 0) {
+            // Start random selection loop
+            let timerId = setTimeout(function randomize() {
+                toneToggleSettings.selectRandomTones(beatId);
+                timerId = setTimeout(randomize, toneToggleSettings.intervalDelay);
+                toneToggleSettings.timerIds[beatId] = timerId;
+            }, 0);
         } else {
-            // stop random selection
-            clearInterval(this.randomBeats[beatId]);
-            this.randomBeats[beatId] = [];
+            // Stop random selection loop
+            clearTimeout(this.timerIds[beatId]);
+            this.timerIds[beatId] = [];
         }
     },
 
@@ -222,6 +240,7 @@ const toneToggleSettings = {
     // Calcuates the length of 1 beat
     setAnimationDelay(bpm = 120) {
         this.animationDelay = utils.calcDelay(bpm);
+        this.intervalDelay = this.animationDelay * this.numberofTogglesPerRow;
     },
 };
 
