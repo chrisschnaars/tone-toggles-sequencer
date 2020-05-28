@@ -1,5 +1,4 @@
 import toneToggleSettings from './tone-toggle-settings';
-import audioSettings from '../audio/audio-settings';
 import player from '../audio/player';
 
 class ToneToggle {
@@ -74,7 +73,7 @@ class ToneToggle {
 
     toggleAudio(beatState, activeState) {
         const selectedNote = beatState
-            ? audioSettings.beatDisplays[this.row]
+            ? toneToggleSettings.beatDisplays[this.row]
             : player.tones[this.row];
 
         const audioArray = beatState
