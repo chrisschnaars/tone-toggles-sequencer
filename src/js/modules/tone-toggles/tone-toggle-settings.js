@@ -2,6 +2,7 @@ import ToneToggle from './tone-toggle';
 import controlBar from '../control-bar/control-bar';
 import player from '../audio/player';
 import colorSettings from '../audio/color-settings';
+import randomButtonIcon from './random-button.js';
 import utils from '../utils';
 
 const toneToggleSettings = {
@@ -83,13 +84,8 @@ const toneToggleSettings = {
         beatContainers.forEach((item, index) => {
             const randomButton = document.createElement('button');
             randomButton.id = index;
-            randomButton.classList.add(
-                'btn',
-                'btn--round',
-                'btn--icon',
-                'random-btn',
-                'js-random-btn'
-            );
+            randomButton.classList.add('btn', 'btn--round', 'random-btn', 'js-random-btn');
+            randomButton.innerHTML = randomButtonIcon;
             item.append(randomButton);
         });
     },

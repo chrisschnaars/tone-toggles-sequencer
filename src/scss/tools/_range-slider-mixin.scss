@@ -1,9 +1,10 @@
-$_slider_thumb-size: 1.75rem;
-$_slider-track-height: 0.5rem;
+$_slider_thumb-size: 3rem;
+$_slider-track-height: 3rem;
 $_slider_track-color: $color_gray-2;
 
 @mixin track {
     animation: $transition-duration-base;
+    box-shadow: 0px 2px 4px 0px rgba(17, 17, 18, 0.15);
     cursor: pointer;
     height: $_slider_track-height;
     width: 100%;
@@ -12,11 +13,10 @@ $_slider_track-color: $color_gray-2;
 @mixin thumb {
     background: $color_primary;
     border: none;
-    border-radius: 100%;
-    box-shadow: 0px 2px 4px 0px rgba(17, 17, 18, 0.15);
+    border-radius: $border-radius_btn;
     cursor: pointer;
     height: $_slider_thumb-size;
-    width: $_slider_thumb-size;
+    width: 2rem;
 
     &:focus,
     &:hover {
@@ -38,7 +38,7 @@ $_slider_track-color: $color_gray-2;
 
     &::-webkit-slider-thumb {
         @include thumb;
-        margin-top: -0.575rem;
+        margin-top: 0;
     }
 
     &::-moz-range-track {

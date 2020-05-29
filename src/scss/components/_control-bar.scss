@@ -1,44 +1,66 @@
-$_controls-container_max-width: 80rem;
-
 .control-bar {
     border-top: 1px solid $color_gray-2;
-    display: flex;
-    justify-content: center;
 }
 
 .control-bar__inner-container {
     display: flex;
-    justify-content: center;
-    max-width: $_controls-container_max-width;
+    justify-content: space-between;
+    padding: $space-2 $space-2;
 }
 
-.control-bar__control-container {
-    flex: 1;
-    margin: 0 $space-1;
-    width: 100%;
+.control-bar__group-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: $space-1;
 
-    @media (min-width: $breakpoint_small) {
-        margin: 0 $space-2;
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    @media (min-width: $breakpoint_medium) {
+        flex-wrap: unset;
     }
 }
 
-.control-bar__control-container--small {
-    flex: 0;
-}
-
-.control-bar__control-container--horizontal-center {
+.control-bar__control-container {
     align-items: center;
     display: flex;
+    flex: 0;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 0 $space-2 0 0;
+    width: 100%;
+
+    @media (min-width: $breakpoint_medium) {
+        margin: 0 $space-4 0 0;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
 }
 
-.control-bar__control-container--vertical-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.control-bar__control-container--align-left {
+    align-items: flex-start;
 }
 
-.control-bar__control-label-group {
+.control-bar__control-container--mobile-priority {
+    margin-bottom: 1rem;
+    min-width: 100%;
+    order: -1;
+
+    @media (min-width: $breakpoint_medium) {
+        margin-bottom: unset;
+        min-width: unset;
+        order: unset;
+    }
+}
+
+.control-bar__button-container {
+    margin-bottom: $space-1;
+}
+
+.control-bar__control-label-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -46,8 +68,7 @@ $_controls-container_max-width: 80rem;
 
 .control-bar__control-label {
     font-size: $font-size_16;
-    line-height: 1.5;
-    margin-bottom: 0.25rem !important;
+    line-height: 1;
 }
 
 .control-bar__toggle-group {
@@ -58,6 +79,11 @@ $_controls-container_max-width: 80rem;
 .control-bar__slider-container {
     display: flex;
     flex-direction: column;
-    height: $control_size_base;
+    height: 100%;
     justify-content: center;
+    width: 100%;
+
+    @media (min-width: $breakpoint_medium) {
+        width: unset;
+    }
 }

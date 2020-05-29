@@ -1,15 +1,15 @@
 .mobile-hidden {
     display: none;
 
-    @media (min-width: $breakpoint_small) {
-        display: unset;
+    @media (min-width: $breakpoint_medium) {
+        display: inherit;
     }
 }
 
 .mobile-visible {
     display: inherit;
 
-    @media (min-width: $breakpoint_small) {
+    @media (min-width: $breakpoint_medium) {
         display: none;
     }
 }
