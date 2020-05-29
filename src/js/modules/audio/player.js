@@ -81,8 +81,13 @@ const player = {
 
     togglePlaying() {
         Tone.Transport.toggle();
-        document.querySelector('.js-play-toggle').classList.toggle('play-btn--active');
+
         this.playing = !this.playing;
+
+        const playButtonIcons = document.querySelectorAll('.play-btn');
+        playButtonIcons.forEach((item) => {
+            item.classList.toggle('play-btn--hidden');
+        });
     },
 
     setTempo(value) {

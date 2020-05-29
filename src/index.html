@@ -38,114 +38,194 @@
             </main>
 
             <footer class="site__footer container control-bar">
-                <div
-                    class="container__inner-container container__inner-container--small control-bar__inner-container"
-                >
+                <div class="control-bar__inner-container">
                     <!-- Play Button -->
-                    <div
-                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--vertical-center"
-                    >
-                        <button
-                            class="btn btn--primary btn--large btn--icon btn--round btn--round--large play-btn js-play-toggle"
-                            type="button"
-                            name="mute"
-                            aria-label="Play"
-                        ></button>
-                    </div>
-
-                    <!-- Sound Bank Selector for Larger Screens -->
-                    <div class="control-bar__control-container mobile-hidden">
-                        <p class="control-bar__control-label">Sound Bank</p>
-
-                        <div class="control-bar__toggle-group js-sound-bank-toggle">
+                    <div class="control-bar__group-container">
+                        <div class="control-bar__control-container">
                             <button
-                                class="btn btn--toggle btn--toggle-selected js-sound-bank-toggle-btn"
-                                name="sound-bank"
-                                value="tones"
+                                class="btn btn--primary btn--large btn--round js-play-toggle"
                                 type="button"
+                                name="mute"
+                                aria-label="Play"
                             >
-                                Tones
-                            </button>
-                            <button
-                                class="btn btn--toggle js-sound-bank-toggle-btn"
-                                name="sound-bank"
-                                value="beats"
-                                type="button"
-                            >
-                                Beats
+                                <svg
+                                    class="btn__icon btn__icon--large play-btn"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+
+                                <svg
+                                    class="btn__icon btn__icon--large play-btn play-btn--hidden"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Sound Bank Selector for Smaller Screens -->
-                    <div
-                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center mobile-visible"
-                    >
-                        <p class="control-bar__control-label">Bank</p>
-
-                        <button
-                            class="btn js-sound-bank-toggle-mini js-sound-bank-toggle"
-                            name="sound-bank"
-                            type="button"
-                            aria-label="Toggle Sound Bank"
-                            value="beats"
+                    <div class="control-bar__group-container">
+                        <!-- Sound Bank Selector -->
+                        <div
+                            class="control-bar__control-container control-bar__control-container--align-left"
                         >
-                            Beats
-                        </button>
-                    </div>
+                            <!-- Larger screens -->
+                            <div class="control-bar__button-container mobile-hidden">
+                                <div class="control-bar__toggle-group js-sound-bank-toggle">
+                                    <button
+                                        class="btn btn--toggle btn--toggle-selected js-sound-bank-toggle-btn"
+                                        name="sound-bank"
+                                        value="tones"
+                                        type="button"
+                                    >
+                                        <div class="btn__inner-container">
+                                            Tones
+                                        </div>
+                                    </button>
+                                    <button
+                                        class="btn btn--toggle js-sound-bank-toggle-btn"
+                                        name="sound-bank"
+                                        value="beats"
+                                        type="button"
+                                    >
+                                        <div class="btn__inner-container">
+                                            Beats
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
 
-                    <!-- Tempo Control -->
-                    <div class="control-bar__control-container">
-                        <div class="control-bar__control-label-group">
-                            <p class="control-bar__control-label">Tempo</p>
-                            <p class="control-bar__control-label mobile-hidden js-tempo-readout">
-                                120
-                            </p>
+                            <!-- Smaller screens -->
+                            <div class="control-bar__button-container mobile-visible">
+                                <button
+                                    class="btn js-sound-bank-toggle-mini js-sound-bank-toggle"
+                                    name="sound-bank"
+                                    type="button"
+                                    aria-label="Toggle Sound Bank"
+                                    value="beats"
+                                >
+                                    Beats
+                                </button>
+                            </div>
+
+                            <div class="control-bar__control-label">
+                                Sounds
+                            </div>
                         </div>
 
-                        <div class="control-bar__slider-container">
-                            <input
-                                class="range-slider js-tempo-control"
-                                name="tempo"
-                                type="range"
-                                role="slider"
-                                min="80"
-                                max="220"
-                                value="120"
-                                step="1"
-                                aria-valuemin="80"
-                                aria-valuemax="220"
-                                aria-valuenow="120"
-                            />
+                        <!-- Tempo Control -->
+                        <div
+                            class="control-bar__control-container control-bar__control-container--mobile-priority"
+                        >
+                            <div
+                                class="control-bar__slider-container control-bar__button-container"
+                            >
+                                <input
+                                    class="range-slider js-tempo-control"
+                                    name="tempo"
+                                    type="range"
+                                    role="slider"
+                                    min="80"
+                                    max="220"
+                                    value="120"
+                                    step="1"
+                                    aria-valuemin="80"
+                                    aria-valuemax="220"
+                                    aria-valuenow="120"
+                                />
+                            </div>
+
+                            <div class="control-bar__control-label-container">
+                                <div class="control-bar__control-label">
+                                    Tempo
+                                </div>
+
+                                <div
+                                    class="control-bar__control-label range-slider__readout js-tempo-readout"
+                                >
+                                    120
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Refresh Button -->
-                    <div
-                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
-                    >
-                        <p class="control-bar__control-label">Refresh</p>
+                        <!-- Refresh Button -->
+                        <div class="control-bar__control-container">
+                            <div class="control-bar__button-container">
+                                <button
+                                    class="btn btn--round js-refresh-btn"
+                                    type="button"
+                                    name="refresh"
+                                    aria-label="Refresh Notes"
+                                >
+                                    <svg
+                                        class="btn__icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path
+                                            d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="control-bar__control-label">
+                                Refresh
+                            </div>
+                        </div>
 
-                        <button
-                            class="btn btn--icon btn--round btn--refresh js-refresh-btn"
-                            type="button"
-                            name="refresh"
-                            aria-label="Refresh Notes"
-                        ></button>
-                    </div>
+                        <!-- Clear Button-->
+                        <div class="control-bar__control-container">
+                            <div class="control-bar__button-container">
+                                <button
+                                    class="btn btn--round js-clear-btn"
+                                    type="button"
+                                    name="clear"
+                                    aria-label="Clear Selection"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                        <path
+                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                                        ></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
 
-                    <!-- Clear Button-->
-                    <div
-                        class="control-bar__control-container control-bar__control-container--small control-bar__control-container--horizontal-center"
-                    >
-                        <p class="control-bar__control-label">Clear</p>
-
-                        <button
-                            class="btn btn--icon btn--round btn--clear js-clear-btn"
-                            type="button"
-                            name="clear"
-                            aria-label="Clear Selection"
-                        ></button>
+                            <div class="control-bar__control-label">
+                                Clear
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>
@@ -156,11 +236,25 @@
             <div class="container__inner-container">
                 <div class="overlay__close-btn-container">
                     <button
-                        class="overlay__close-btn btn btn--icon btn--round btn--close js-about-close"
+                        class="overlay__close-btn btn btn--round js-about-close"
                         type="button"
                         name="Close"
                         aria-label="Close"
-                    ></button>
+                    >
+                        <svg
+                            class="btn__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
             </div>
 

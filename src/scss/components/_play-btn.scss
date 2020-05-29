@@ -1,8 +1,3 @@
-.play-btn {
-    background-image: url(../assets/icons/play.svg);
-    transition: background-image 0.125s ease;
-}
-
-.play-btn--active {
-    background-image: url(../assets/icons/pause.svg);
+.play-btn--hidden {
+    display: none;
 }

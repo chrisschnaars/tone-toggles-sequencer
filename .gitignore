@@ -3,6 +3,7 @@
 notes.txt
 
 # BUILD FILES
+/prod
 /dist
 .sass-cache
 

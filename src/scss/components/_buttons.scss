@@ -1,25 +1,54 @@
-$_primary-btn-size: 4rem;
+$_default-btn-size: 3rem;
+$_primary-btn-size: 4.5rem;
 
 .btn {
-    height: $control_size_base;
+    height: $_default-btn-size;
+    // line-height: 1.5rem;
 }
 
 .btn--large {
     height: $_primary-btn-size;
+    padding: 1.25rem;
 }
 
 .btn--primary {
     background-color: $color_primary;
+    color: $color_white;
     &:focus,
     &:hover {
         background-color: $color_primary-dark;
     }
 }
 
+.btn--round {
+    border-radius: 100%;
+}
+
+.btn__inner-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn__icon {
+    display: inline-block;
+    height: 1.5rem;
+    overflow: visible;
+    width: 1.5rem;
+}
+
+.btn__icon--large {
+    height: 2rem;
+    width: 2rem;
+}
+
 .btn--toggle {
     border-radius: 0;
-    box-shadow: none;
-    flex: 1 1 0;
+
+    @media (min-width: $breakpoint_small) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 
     &:first-child {
         border-radius: $border-radius_btn 0 0 $border-radius_btn;
@@ -37,7 +66,6 @@ $_primary-btn-size: 4rem;
 .btn--toggle-selected {
     background-color: $color_primary;
     color: $color-white;
-    opacity: 1;
 
     &:focus {
         background-color: $color_primary;
@@ -46,33 +74,4 @@ $_primary-btn-size: 4rem;
     &:hover {
         background-color: $color_primary-dark;
     }
-}
-
-.btn--icon {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    border-radius: 50%;
-    padding: 0;
-}
-
-.btn--round {
-    width: $control_size_base;
-}
-
-.btn--round--large {
-    width: $_primary-btn-size;
-}
-
-// Icon backgrounds
-.btn--clear {
-    background-image: url(../assets/icons/clear.svg);
-}
-
-.btn--close {
-    background-image: url(../assets/icons/close.svg);
-}
-
-.btn--refresh {
-    background-image: url(../assets/icons/refresh.svg);
 }

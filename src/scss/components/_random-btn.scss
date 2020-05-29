@@ -1,10 +1,10 @@
-.random-btn {
-    background-image: url(../assets/icons/random-unselected.svg);
+.random-btn-icon {
+    fill: none;
+    stroke: currentColor;
 }
 
 .random-btn--active {
     background-color: $color_primary;
-    background-image: url(../assets/icons/random-selected.svg);
 
     &:focus {
         background-color: $color_primary;
@@ -12,5 +12,10 @@
 
     &:hover {
         background-color: $color_primary-dark;
+    }
+
+    .random-btn-icon {
+        fill: $color_white;
+        stroke: $color-white;
     }
 }
