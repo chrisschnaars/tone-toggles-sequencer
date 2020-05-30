@@ -1,5 +1,5 @@
 $_slider_thumb-size: 3rem;
-$_slider-track-height: 3rem;
+$_slider-track-height: 1rem;
 $_slider_track-color: $color_gray-2;
 
 @mixin track {
@@ -14,9 +14,10 @@ $_slider_track-color: $color_gray-2;
     background: $color_primary;
     border: none;
     border-radius: $border-radius_btn;
+    box-shadow: 0px 2px 4px 0px rgba(17, 17, 18, 0.15);
     cursor: pointer;
     height: $_slider_thumb-size;
-    width: 2rem;
+    width: 1.75rem;
 
     &:focus,
     &:hover {
