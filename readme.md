@@ -12,6 +12,8 @@ The special part here is the random function, which is activated by the star but
 
 The set of tones is randomly selected from a root note's major and minor keys. If you don't like the selection, hit refresh to get new notes.
 
-## Add
+## Installation
 
--   how to get up and running
+Clone the repo and run `npm install`.
+
+This app uses Parcel for bundling files and assets. To start your dev server, run `npm run dev`. To build for production, run `npm run build`.
