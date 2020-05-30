@@ -75,19 +75,12 @@ h4 {
 }
 
 /*
-  body copy:
-  large screen: 18/24
-  small screen: 16/20
+  body copy: 18/24
 */
 p {
-    font-size: $body-font-size--mob;
-    line-height: $body-line-height--mob;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
     margin: 0 0 $space-4;
-
-    @media (min-width: $breakpoint_medium) {
-        font-size: $body-font-size;
-        line-height: $body-line-height;
-    }
 
     &:last-of-type {
         margin-bottom: 0;
@@ -95,11 +88,7 @@ p {
 }
 
 label {
-    font-size: $body-font-size--mob;
+    font-size: $body-font-size;
     line-height: 1;
     margin-bottom: $space-1;
-
-    @media (min-width: $breakpoint_medium) {
-        font-size: $body-font-size;
-    }
 }
