@@ -9,13 +9,8 @@
 }
 
 .top-bar__site-title {
-    font-size: $body-font-size--mob;
+    font-size: $body-font-size;
     font-weight: $font-weight_body;
-    line-height: $body-line-height--mob;
+    line-height: $body-line-height;
     margin: 0;
-
-    @media (min-width: $breakpoint_small) {
-        font-size: $body-font-size;
-        line-height: $body-line-height;
-    }
 }
