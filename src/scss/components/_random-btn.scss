@@ -1,3 +1,14 @@
+.random-btn {
+    align-self: center;
+    height: 36px;
+    width: 36px;
+
+    @media (min-width: $breakpoint_small) {
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
 .random-btn-icon {
     fill: none;
     stroke: currentColor;
