@@ -74,8 +74,8 @@ const audioSettings = {
 
     getNoteColor(note) {
         for (let i = 0; i < colorSettings.length; i++) {
-            if (note === colorSettings[i][0]) {
-                return colorSettings[i][1];
+            if (note === colorSettings[i].note) {
+                return colorSettings[i].color;
             }
         }
     },

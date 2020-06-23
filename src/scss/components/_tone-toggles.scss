@@ -24,7 +24,6 @@
     justify-content: flex-start;
     padding: $space-1;
     transition: background-color $transition-duration-base $transition-timing-base;
-    width: 100%;
 
     @media (min-width: $breakpoint_small) {
         flex-direction: column;
@@ -37,39 +36,39 @@
 }
 
 .tone-toggles__beat-container--active {
-    background-color: $color_gray-1;
+    background-color: $color_tan-2;
 
     .tone-toggles__toggle--active {
-        transform: scale(0.95);
+        transform: scaleX(0.96);
     }
 }
 
 .tone-toggles__toggle {
     align-items: center;
-    background-color: $color_gray-1;
-    border: 0.125rem solid $color_gray-3;
-    border-radius: $border-radius_btn;
-    color: $color_gray-4;
+    background-color: $color_tan-2;
+    border: 2px solid $color_tan-4;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex: 1 0 0;
     flex-direction: column;
     justify-content: center;
-    margin: 0 0.5rem 0 0;
+    margin: 0 $space-1 0 0;
     min-width: 1rem;
     transition: all $transition-duration-base $transition-timing-base;
     width: 100%;
 
     &:hover,
     &:focus {
-        background-color: $color_gray-2;
-        border-color: $color_gray-3;
-        color: $color_gray-5;
+        background-color: $color_tan-3;
+        color: rgba(0, 0, 0, 0.9);
         cursor: pointer;
         outline: none;
-        transform: scale(0.985);
+        transform: scaleX(0.99);
     }
 
     @media (min-width: $breakpoint_small) {
+        border-radius: 8px;
         margin: 0 0 $space-2 0;
     }
 }
