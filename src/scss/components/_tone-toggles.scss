@@ -24,7 +24,6 @@
     justify-content: flex-start;
     padding: $space-1;
     transition: background-color $transition-duration-base $transition-timing-base;
-    width: 100%;
 
     @media (min-width: $breakpoint_small) {
         flex-direction: column;
@@ -40,7 +39,7 @@
     background-color: $color_tan-2;
 
     .tone-toggles__toggle--active {
-        transform: scale(0.98);
+        transform: scaleX(0.96);
     }
 }
 
@@ -48,13 +47,13 @@
     align-items: center;
     background-color: $color_tan-2;
     border: 2px solid $color_tan-4;
-    border-radius: 8px;
+    border-radius: 4px;
     color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex: 1 0 0;
     flex-direction: column;
     justify-content: center;
-    margin: 0 0 $space-1;
+    margin: 0 $space-1 0 0;
     min-width: 1rem;
     transition: all $transition-duration-base $transition-timing-base;
     width: 100%;
@@ -65,10 +64,11 @@
         color: rgba(0, 0, 0, 0.9);
         cursor: pointer;
         outline: none;
-        transform: scale(0.99);
+        transform: scaleX(0.99);
     }
 
     @media (min-width: $breakpoint_small) {
+        border-radius: 8px;
         margin: 0 0 $space-2 0;
     }
 }
